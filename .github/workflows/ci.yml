@@ -1,0 +1,16 @@
+name: CI Simple
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validar-codigo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificando existencia de archivos
+        run: |
+          echo "Verificando archivos..."
+          test -f index.html && echo "index.html existe" || echo "index.html NO existe"
+          test -f main.js && echo "main.js existe" || echo "main.js NO existe"
